@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.finallydevice.ScreenStatics.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_screenstaticsFragment"
+            app:destination="@id/screenstaticsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.finallydevice.AppusingStatics.appusinglist.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_nav_gallery_to_barchartFragment"
+            app:destination="@id/barchartFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/todolistfragment"
+        android:name="com.example.finallydevice.todolist_shortterm.todolist.TodolistFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_todolist" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_addItem"
+            app:destination="@id/addItem" />
+        <action
+            android:id="@+id/action_todolistfragment_to_tomatoColockFragment"
+            app:destination="@id/tomatoColockFragment" />
+        <action
+            android:id="@+id/action_todolistfragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItem"
+        android:name="com.example.finallydevice.share.AddItem"
+        android:label="fragment_add_item"
+        tools:layout="@layout/fragment_add_item" />
+    <fragment
+        android:id="@+id/tomatoColockFragment"
+        android:name="com.example.finallydevice.tomatocolock.TomatoColockFragment"
+        android:label="TomatoColockFragment" >
+        <argument
+            android:name="timeoclock"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.finallydevice.share.UpdateFragment"
+        android:label="UpdateFragment" >
+        <argument android:name="data"
+            app:argType="com.example.finallydevice.todolist_shortterm.todolist.dataclass.ToDoListData" />
+    </fragment>
+    <fragment
+        android:id="@+id/AppStaticsFragment"
+        android:name="com.example.finallydevice.AppusingStatics.AppusingPieChart.AppusingStaticsFragment"
+        android:label="appusing_statics_fragment"
+        tools:layout="@layout/appusing_statics_fragment" >
+        <action
+            android:id="@+id/action_AppStaticsFragment_to_nav_gallery"
+            app:destination="@id/nav_gallery" />
+    </fragment>
+    <fragment
+        android:id="@+id/barchartFragment"
+        android:name="com.example.finallydevice.AppusingStatics.Appusing.BarchartFragment"
+        android:label="barchart_fragment"
+        tools:layout="@layout/barchart_fragment" >
+        <argument
+            android:name="appdata"
+            app:argType="com.example.finallydevice.AppusingStatics.appusinglist.dataclass.Appusingdata_hour_database" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.finallydevice.setting.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/screenstaticsFragment"
+        android:name="com.example.finallydevice.ScreenStatics.screenbar.ScreenstaticsFragment"
+        android:label="ScreenstaticsFragment" >
+        <argument
+            android:name="type"
+            app:argType="string" />
+    </fragment>
+</navigation>
